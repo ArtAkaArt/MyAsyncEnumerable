@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	
 	
 	<PropertyGroup>
@@ -7,5 +7,7 @@
     <Nullable>enable</Nullable>
 	<RepositoryUrl>https://github.com/ArtAkaArt/MyAsyncEnumerable.git</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
+	<Authors>ArtAkaArt</Authors>
+	<Description>Convert collection of functions to AsyncEnumerable Collection</Description>
   </PropertyGroup>
 </Project>
