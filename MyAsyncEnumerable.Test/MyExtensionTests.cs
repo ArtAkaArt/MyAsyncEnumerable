@@ -110,23 +110,6 @@ namespace MyEnumTesting
             Assert.Null(results);
             Assert.Null(exceptions);
         }
-
-        [Fact]
-        public async void Run_TenFuncAsAsyncEnumerable_RuntimeLongerOrEqualThan10sExpected()
-        {
-            var funcs = Enumerable.Range(1, 10)
-                        .Select(i => (Func<Task<int>>)(async () => await GetResultIn1Sec(i)));
-            var stopWatch = Stopwatch.StartNew();
-
-            var (results, exceptions) = await GetResultFromRunAwaitForeach(funcs.ToAsyncEumerable(ErrorsHandleMode.IgnoreErrors, 1));
-            var time = stopWatch.Elapsed.Seconds;
-
-            Assert.NotNull(results);
-            results!.Sort();
-            Assert.Equal(actual: results, expected: Enumerable.Range(1, 10).ToList());
-            Assert.Null(exceptions);
-            Assert.True(time >= 10);
-        }
         [Fact]
         public async void Run_TenFuncAsAsyncEnumerable_RuntimeLessThan6sExpected()
         {
