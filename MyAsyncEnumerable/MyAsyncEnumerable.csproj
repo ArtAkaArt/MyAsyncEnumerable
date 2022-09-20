@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
+	<RepositoryUrl>https://github.com/ArtAkaArt/MyAsyncEnumerable.git</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
+	<PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
