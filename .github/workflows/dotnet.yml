@@ -1,0 +1,24 @@
+name: Release to Nuget
+on:
+  release:
+   types: [published]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Create NuGet Package
+      run: dotnet pack -c Release /p:Version=${{ github.event.release.tag_name }} /p:PackageReleaseNotes="See https://github.com/ArtAkaArt/MyAsyncEnumerable/releases/tag/${{ github.event.release.tag_name }}"
+      working-directory: .
+    - name: Archive NuGet Package
+      uses: actions/upload-artifact@v1
+      with:
+        name: MyAsyncEnumerable
+        path: ./MyAsyncEnumerable/bin/Release/MyAsyncEnumerable.${{ github.event.release.tag_name }}.nupkg
