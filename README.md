@@ -48,7 +48,8 @@ MyAsyncEnumerable is a library for .NET, written in C#. This library allows to c
                              ErrorsHandleMode mode = ErrorsHandleMode.ReturnAllErrors, int tasksLimit = 4)
 ```
 ```csharp
-    public MyAsyncEnumerable(IEnumerable<Func<CancellationToken, Task<T>>> tasks, ErrorsHandleMode mode, int tasksLimit = 4)
+    public MyAsyncEnumerable(IEnumerable<Func<CancellationToken, Task<T>>> tasks, 
+    			     ErrorsHandleMode mode, int tasksLimit = 4)
 ```
 ```csharp
     // without token
