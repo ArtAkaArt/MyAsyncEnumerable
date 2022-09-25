@@ -43,7 +43,7 @@ MyAsyncEnumerable is a library for .NET, written in C#. This library allows to c
 ## Constructors
 
 ```csharp
-// with token
+    // with token
     public MyAsyncEnumerable(IEnumerable<Func<CancellationToken, Task<T>>> tasks, int capacity = 10, 
                              ErrorsHandleMode mode = ErrorsHandleMode.ReturnAllErrors, int tasksLimit = 4)
 ```
