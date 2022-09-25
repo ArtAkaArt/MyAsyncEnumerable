@@ -11,14 +11,10 @@ MyAsyncEnumerable is a library for .NET, written in C#. This library allows to c
     }
 
     var initialCollection = new List<Func<Task<<Data>>>();
-    // Or version with CancellationToken
-    // var initialCollection = new List<Func<CancellationToken, Task<Tank>>>();
-    // var token = new CancellationToken();
     for (int i = 0; i < 100; i++)
     {
       var closure = i;
       initialCollection.Add(async () => SomeMethod(closure));
-      // initialCollection.Add((async (token) => await SomeMethod(closure, token)));
     }
     var asyncEn = new MyAsyncEnumerable(initialCollection);
     // Or extension method
