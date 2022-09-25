@@ -82,7 +82,7 @@ This parameter has 3 possible mode values:
  * ReturnAllErrors. All exceptions will be collected in AggregateException, that will be thrown after the end of iteration.
  * EndAtFirstError. Iteration will be canceled at first exception, that will be thrown as AggregateException into the calling method. 
 ```csharp
-    var asyncEn = new MyAsyncEnumerable(initialCollection, ErrorsHandleMode. EndAtFirstError);
+    var asyncEn = new MyAsyncEnumerable(initialCollection, ErrorsHandleMode.EndAtFirstError);
 ```
 Default value is ErrorsHandleMode.ReturnAllErrors.
 
@@ -90,9 +90,9 @@ Default value is ErrorsHandleMode.ReturnAllErrors.
 
 The parameter defining how many threads will be used for execution of the collection of functions. By default is 4.
 ```csharp
-    var asyncEn = new MyAsyncEnumerable(initialCollection, initialCollection.Count ErrorsHandleMode. EndAtFirstError, 3);
+    var asyncEn = new MyAsyncEnumerable(initialCollection, initialCollection.Count ErrorsHandleMode.EndAtFirstError, 3);
 	  //or
-    var asyncEn = new MyAsyncEnumerable(initialCollection, ErrorsHandleMode. EndAtFirstError, 3);
+    var asyncEn = new MyAsyncEnumerable(initialCollection, ErrorsHandleMode.EndAtFirstError, 3);
 ```
 
 ## Extension method
@@ -103,5 +103,5 @@ Extension method .ToAsyncEnymerable() applies to collections IEnumerable<Func<Ta
     var asyncEn = initialCollection.ToAsyncEnumerable(initialCollection.Count);
     var asyncEn = initialCollection.ToAsyncEnumerable(ErrorsHandleMode. EndAtFirstError);
     var asyncEn = initialCollection.ToAsyncEnumerable(initialCollection.Count, ErrorsHandleMode.EndAtFirstError, 3);
-    var asyncEn = initialCollection.ToAsyncEnumerable(ErrorsHandleMode. EndAtFirstError, 3);
+    var asyncEn = initialCollection.ToAsyncEnumerable(ErrorsHandleMode.EndAtFirstError, 3);
 ```
