@@ -76,7 +76,7 @@ The parameter ErrorsHandleMode of Enum type. Defines actions to be taken if exce
 This parameter has 3 possible mode values:
  * IgnoreErrors. All exceptions will be ignored without canceling iteration.
  * ReturnAllErrors. All exceptions will be collected in AggregateException, that will be thrown after the end of iteration.
- * EndAtFirstError. Iteration will be canceled at first exception, that will be thrown as AggregateException into the calling method. 
+ * EndAtFirstError. Iteration will be canceled at first exception and it will be thrown into the calling method. 
 ```csharp
     var asyncEn = new MyAsyncEnumerable(initialCollection, ErrorsHandleMode.EndAtFirstError);
 ```
